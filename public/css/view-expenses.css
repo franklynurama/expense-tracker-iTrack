@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212; /* Dark background */
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  font-size: 14px;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding: 20px;
+  position: fixed; /* Fix the sidebar to the left */
+  left: 0; /* Align to the left edge */
+}
+
+.sidebar .logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.sidebar nav ul li a i {
+  margin-right: 10px;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #353535;
+}
+
+.pro-banner {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  text-align: left; /* Align text to the left */
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.pro-banner-header {
+  display: flex; /* Flex for the header */
+  justify-content: space-between; /* Space between header items */
+  align-items: center; /* Center items vertically */
+}
+
+.get-pro-text {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.close-icon {
+  margin-left: auto; /* Pushes the "x" icon to the right end */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.pro-banner p {
+  margin: 5px 0; /* Adds spacing above and below the description */
+}
+
+.pro-banner-button {
+  display: flex; /* Flex container for button */
+  justify-content: center; /* Center button horizontally */
+  margin-top: 10px; /* Optional: spacing above button */
+}
+
+.pro-banner button {
+  background-color: #0f62fe;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pro-banner button:hover {
+  background-color: #0353e9;
+}
+
+/* All Expenses Section */
+.expenses {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 250px; /* Align with the sidebar's width */
+  width: calc(100% - 250px); /* Adjust width to fill the remaining space */
+  height: auto; /* Allow height to be determined by content */
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.expenses-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.expenses-header .back-to-dashboard {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #353535;
+  border-radius: 5px;
+  display: inline-flex; /* Use inline-flex for button alignment */
+  align-items: center;
+}
+
+.expenses-header .back-to-dashboard:hover {
+  background-color: #0f62fe;
+  color: #fff;
+}
+
+.expenses-table-wrapper {
+  overflow-x: auto; /* Allows scrolling for smaller screens */
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expenses-table th,
+.expenses-table td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.expenses-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.expenses-table td {
+  background-color: #272727;
+  text-align: left;
+}
+
+.update-button,
+.delete-button {
+  background-color: #353535; /* Same color as the back to dashboard button */
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Adjust padding as necessary */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.delete-button {
+  color: #e74c3c;
+}
+
+.update-button:hover,
+.delete-button:hover {
+  background-color: #0353e9; /* Darker shade for hover effect */
+  color: white;
+}
+
+#passwordModal {
+  position: fixed;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#deleteConfirm {
+  color: #000;
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+
+#passwordInput {
+  padding: 5px 10px;
+}
+
+#passwordModal button {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#confirmButton {
+  background-color: #0f62fe;
+  border-color: #0f62fe;
+  color: #fff;
+}
+
+#confirmButton:hover {
+  background-color: #0353e9;
+  border-color: #0353e9;
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  z-index: 9999; /* Place it above everything */
+  display: flex; /* Flexbox to center content */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+/* Modal content container */
+.modal-content {
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Form */
+h1 {
+  margin-bottom: 20px;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+select::placeholder,
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+/* Form actions container */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Buttons */
+.button {
+  background-color: #0f62fe;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 45%; /* Adjust buttons to share width */
+}
+
+.button:hover {
+  background-color: #0353e9;
+}
+
+/* Cancel button style */
+.cancel-button {
+  background-color: #e74c3c;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+}

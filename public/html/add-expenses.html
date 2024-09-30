@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../images/icon.ico" type="image/x-icon" />
+    <title>Add Expenses - iTrack</title>
+    <link rel="stylesheet" href="../css/add-expenses.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img
+          src="../../images/icon.webp"
+          alt="Logo Icon"
+          style="height: 30px; margin-left: 5px"
+        />
+        iTrack
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" id="dashboardLink"
+              ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-chart-line"></i> Insights</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-file-alt"></i> Reports</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="pro-banner">
+        <div class="pro-banner-header">
+          <p class="get-pro-text">Get Pro</p>
+          <i class="fas fa-times close-icon"></i>
+        </div>
+        <p class="pro-description">Unlimited assets, insight report exports</p>
+        <div class="pro-banner-button">
+          <button>Start Now • $50/yr →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Add Expense</h1>
+      <form id="addExpenseForm">
+        <select id="expenseCategory" required>
+          <option value="" disabled selected>Select Category</option>
+          <!-- Options will be populated dynamically from the database -->
+        </select>
+        <input
+          type="text"
+          id="expenseDescription"
+          placeholder="Description"
+          required
+        />
+        <input
+          type="number"
+          id="expenseAmount"
+          placeholder="Amount"
+          min="0.01"
+          step="0.01"
+          required
+        />
+        <input type="date" id="expenseDate" required />
+        <button type="submit" class="button">Add Expense</button>
+      </form>
+    </div>
+
+    <script src="../js/add-expenses.js"></script>
+  </body>
+</html>

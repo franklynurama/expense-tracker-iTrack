@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  background-color: #121212; /* Dark background similar to the dashboard */
+  height: 100vh;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.sidebar .logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.sidebar nav ul li a i {
+  margin-right: 10px;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #353535;
+}
+
+.pro-banner {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  text-align: left; /* Align text to the left */
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.pro-banner-header {
+  display: flex; /* Flex for the header */
+  justify-content: space-between; /* Space between header items */
+  align-items: center; /* Center items vertically */
+}
+
+.get-pro-text {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.close-icon {
+  margin-left: auto; /* Pushes the "x" icon to the right end */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.pro-banner p {
+  margin: 5px 0; /* Adds spacing above and below the description */
+}
+
+.pro-banner-button {
+  display: flex; /* Flex container for button */
+  justify-content: center; /* Center button horizontally */
+  margin-top: 10px; /* Optional: spacing above button */
+}
+
+.pro-banner button {
+  background-color: #0f62fe;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pro-banner button:hover {
+  background-color: #0353e9;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.add-button {
+  background-color: #0f62fe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button i {
+  margin-right: 5px;
+}
+
+.add-button:hover {
+  background-color: #0353e9;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logout-button i {
+  margin-right: 5px;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Content Row (Total Expenses and Categories) */
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.total-expenses,
+.categories {
+  width: 49.5%;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.total-expenses h2,
+.categories h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.total-expenses h3,
+.categories h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.total-expenses-chart {
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #353535;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#noExpMessage {
+  padding-top: 80px;
+}
+
+.total-expenses canvas {
+  width: auto;
+  height: auto;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.time-filters {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 10px auto 0;
+}
+
+.time-filters button {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.time-filters button:hover {
+  background-color: #353535;
+}
+
+/* Categories Section */
+.categories {
+  width: 49.5%;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.categories canvas {
+  height: 100%; /* Allow the canvas to take the full height of the container */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.chart-container {
+  height: 285px; /* Match this to the height set for canvas */
+  width: 100%; /* Full width of the parent */
+  display: flex; /* Use Flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Required for absolute positioning of the canvas if needed */
+}
+
+#diversification-score {
+  text-align: center;
+  padding-bottom: 3px;
+  font-size: 15px;
+}
+
+/* Expenses Section */
+.expenses {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.expenses-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.expenses-table-wrapper {
+  overflow-x: auto; /* Allows scrolling for smaller screens */
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expenses-table th,
+.expenses-table td {
+  text-align: left;
+  padding: 15px;
+}
+
+.expenses-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.expenses-table td {
+  background-color: #272727;
+  text-align: left;
+  width: 25%; /* Ensures each column takes 20% of the table width */
+}
+
+.view-all {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #353535;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-all:hover {
+  background-color: #0f62fe;
+  color: #fff;
+}
+
+.message {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin: 20px 0;
+}
+
+/* Add Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .total-expenses,
+  .categories {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #1f1f1f;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.option-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.option {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #353535;
+}
+
+.option i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.option p {
+  margin: 0;
+  color: white;
+}

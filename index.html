@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
+    <title>iTrack - Expense Tracker app</title>
+    <link rel="stylesheet" href="public/css/homepage.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="images/icon.webp"
+            alt="Logo Icon"
+            style="height: 30px; margin-left: 5px"
+          />
+          iTrack
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a
+            href="#"
+            class="login"
+            onclick="window.location.href = `${window.location.origin}/login`"
+            >Login</a
+          >
+          <a
+            href="#"
+            class="sign-up"
+            onclick="window.location.href = `${window.location.origin}/register`"
+            >Sign Up</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section class="sect">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Track all your assets</h1>
+          <h1>from one place</h1>
+          <p>Real-time tracking of expenses, categorization of transactions,</p>
+          <p>and seamless management of personal finances.</p>
+          <a
+            href="#"
+            class="cta-button"
+            onclick="window.location.href = `${window.location.origin}/login`"
+            >Start Now &rarr;</a
+          >
+        </div>
+
+        <div class="slider-container">
+          <div class="slider">
+            <img
+              src="images/brand.png"
+              alt="Brand Photo"
+              class="slider-image"
+            />
+            <img
+              src="images/track1.jpeg"
+              alt="Expense Calculation Image"
+              class="slider-image"
+            />
+            <img
+              src="images/track2.webp"
+              alt="Expense Calculation Image"
+              class="slider-image"
+            />
+          </div>
+          <div class="slider-controls">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 iTrack. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="public/js/homepage.js"></script>
+  </body>
+</html>

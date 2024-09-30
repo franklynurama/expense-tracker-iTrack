@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212; /* Dark background */
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  font-size: 14px;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding: 20px;
+  position: fixed; /* Fix the sidebar to the left */
+  left: 0; /* Align to the left edge */
+}
+
+.sidebar .logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.sidebar nav ul li a i {
+  margin-right: 10px;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #353535;
+}
+
+.pro-banner {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  text-align: left; /* Align text to the left */
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.pro-banner-header {
+  display: flex; /* Flex for the header */
+  justify-content: space-between; /* Space between header items */
+  align-items: center; /* Center items vertically */
+}
+
+.get-pro-text {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.close-icon {
+  margin-left: auto; /* Pushes the "x" icon to the right end */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.pro-banner p {
+  margin: 5px 0; /* Adds spacing above and below the description */
+}
+
+.pro-banner-button {
+  display: flex; /* Flex container for button */
+  justify-content: center; /* Center button horizontally */
+  margin-top: 10px; /* Optional: spacing above button */
+}
+
+.pro-banner button {
+  background-color: #0f62fe;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pro-banner button:hover {
+  background-color: #0353e9;
+}
+
+/* Container */
+.container {
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%; /* Responsive width */
+  max-width: 400px; /* Maximum width */
+  margin-left: 250px; /* Align with the sidebar's width */
+  margin: auto; /* Center the container in remaining space */
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+select {
+  appearance: none; /* Remove default arrow */
+}
+
+select::placeholder,
+input[type="text"]::placeholder {
+  color: #888; /* Light gray for placeholder */
+}
+
+.button {
+  background-color: #0f62fe;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0353e9;
+}
